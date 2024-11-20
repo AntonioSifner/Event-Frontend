@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 181, 175, 175;
+  --background-end-rgb: 181, 181, 181;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 181, 175, 175;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(181,175,175);
+}
+
+const detailsButtonStyle = {
+  backgroundColor: "rgb(92,156,176)",
+};
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin: 18px;
+}
+
+.search > h3 {
+  font-weight: normal;
+}
+
+.search > div {
+  display: inline-block;
+  position: relative;
+}
+
+.search > div:after {
+  content: "";
+  background: black;
+  width: 3px;
+  height: 15px;
+  position: absolute;
+  top: 24px;
+  transform: rotate(135deg);
+}
+
+.search > div > input {
+  color: black;
+  font-size: 16px;
+  background: transparent;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  border: solid 3px black;
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+
+
+.search > div > input:focus {
+  border-color: black !important;
+  --tw-ring-color: transparent !important;
+}
+
+.search > div > input::placeholder {
+  color: #000000;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+}
